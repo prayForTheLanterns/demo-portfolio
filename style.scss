@@ -165,8 +165,8 @@
                         text-align: center;
 
                         & label {
-                            color: lime;
-                            text-align: center;
+                            display: flex;
+                            justify-content: center;
                             & i {
                                 display: none;
                             }
