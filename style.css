@@ -98,43 +98,69 @@
   border: 1px solid black;
 }
 
-/* MOBILE SCREEN */
 @media screen and (min-width: 500px) and (max-width: 767px) {
   .site-wrapper {
     border: 2px solid red;
-  }
-  * {
-    transition: 1s ease-in-out;
-    -webkit-transition: 1s ease-in-out;
-    -moz-transition: 1s ease-in-out;
-    -ms-transition: 1s ease-in-out;
-    -o-transition: 1s ease-in-out;
   }
   .header h1 span {
     display: block;
     text-align: center;
   }
+  .content {
+    display: flex;
+    flex-direction: column;
+  }
   .content__side-bar {
-    display: none;
+    width: 100%;
   }
   .content__side-bar__toggle {
     position: absolute;
     top: 10%;
     right: 10%;
-    display: none;
     border: none;
     background: transparent;
     font-size: 1.5em;
   }
-  .content__side-bar__toggle:active .content__side-bar__nav {
-    color: red;
+  .content__side-bar__nav__list__item {
+    font-size: xx-large;
+    text-align: center;
   }
-  .content__side-bar__nav__list--socials .content__side-bar__nav__list__item a span {
+  .content__side-bar__nav__list__item label {
+    color: lime;
+    text-align: center;
+  }
+  .content__side-bar__nav__list__item label i {
+    display: none;
+  }
+  .content__side-bar__nav__list--socials {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .content__side-bar__nav__list--socials li {
+    display: block;
+    padding: 5%;
+    border: 2px solid black;
+  }
+  .content__side-bar__nav__list--socials li a span {
+    display: none;
+  }
+  .content__side-bar__nav__list--socials li:hover {
+    background: black;
+    border: 2px solid white;
+  }
+  .content__side-bar__nav__list--socials li:hover a {
+    color: white;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 979px) {
+  .site-wrapper {
+    border: 2px solid purple !important;
+  }
+  .content__side-bar__nav__list__item a span {
     display: none;
   }
 }
-/* DESKTOP SCREEN */
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 979px) {
   .site-wrapper {
     border: 2px solid green;
   }
@@ -145,7 +171,7 @@
   .content__side-bar__toggle {
     display: none;
   }
-  .content__side-bar__nav__list--socials .content__side-bar__nav__list__item a span {
+  .content__side-bar__nav__list__item a {
     display: block;
   }
 }

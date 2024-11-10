@@ -107,7 +107,6 @@
     margin: 1em;
 }
 
-/*/ CSS only dropdown which works by using a hidden checkbox which allows us to manipulate the :checked pseudo-class. /*/
 .dropdown-toggle {
     display: none;
 
@@ -119,21 +118,18 @@
     }
 }
 
-
-
-/* MOBILE SCREEN */
 @media screen and (min-width: 500px) and (max-width: 767px) {
     .site-wrapper {
         border: 2px solid red;
     }
 
-    * {
-        transition: 1s ease-in-out;
-        -webkit-transition: 1s ease-in-out;
-        -moz-transition: 1s ease-in-out;
-        -ms-transition: 1s ease-in-out;
-        -o-transition: 1s ease-in-out;
-    }
+    // * {
+    //     transition: 1s ease-in-out;
+    //     -webkit-transition: 1s ease-in-out;
+    //     -moz-transition: 1s ease-in-out;
+    //     -ms-transition: 1s ease-in-out;
+    //     -o-transition: 1s ease-in-out;
+    // }
 
     .header {
         & h1 {
@@ -145,34 +141,97 @@
     }
 
     .content {
+        display: flex;
+        flex-direction: column;
+
         &__side-bar {
-            display: none;
+            width: 100%;
+
             &__toggle {
                 position: absolute;
                 top: 10%;
                 right: 10%;
 
-                display: none;
+                // display: none;
                 border: none;
                 background: transparent;
                 font-size: 1.5em;
-
-            
             }
+
+            &__nav {
+                &__list {
+                    &__item {
+                        font-size: xx-large;
+                        text-align: center;
+
+                        & label {
+                            color: lime;
+                            text-align: center;
+                            & i {
+                                display: none;
+                            }
+                        }
+                    }
+
+                    &--socials {
+                        display: flex;
+                        justify-content: space-evenly;
+                        & li {
+                            display: block;
+                            padding: 5%;
+                            border: 2px solid black;
+                            & a {
+                                & span {
+                                    display: none;
+                                }
+                            }
+
+                            &:hover {
+                                background: black;
+                                border: 2px solid white;
+                                & a {
+                                    color: white;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
         }
     }
   
-    .content__side-bar__toggle:active .content__side-bar__nav {
-        color: red;
-    }
+    // .content__side-bar__toggle:active .content__side-bar__nav {
+    //     color: red;
+    // }
   
-    .content__side-bar__nav__list--socials .content__side-bar__nav__list__item a span {
-        display: none;
+    // .content__side-bar__nav__list--socials .content__side-bar__nav__list__item a span {
+    //     display: none;
+    // }
+}
+
+@media screen and (min-width: 768px) and (max-width: 979px) {
+    .site-wrapper {
+        border: 2px solid purple !important;
+    }
+    .content {
+        &__side-bar {
+            &__nav {
+                &__list {
+                    &__item {
+                        & a {
+                            & span {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
-/* DESKTOP SCREEN */
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 979px) {
     .site-wrapper {
         border: 2px solid green;
     }
@@ -185,10 +244,16 @@
             &__toggle {
                 display: none;
             }
-        }
-    }
 
-    .content__side-bar__nav__list--socials .content__side-bar__nav__list__item a span {
-        display: block;
+            &__nav {
+                &__list {
+                    &__item {
+                        & a {
+                            display: block;
+                        }
+                    }
+                }
+            }
+        }
     }
 } 
